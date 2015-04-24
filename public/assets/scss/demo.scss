@@ -1,0 +1,38 @@
+@import 'variables';
+
+section#demo {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1rem;
+  background: $color-dgray;
+  color: $color-lgray;
+
+
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
+    font-weight: $fw-book;
+  }
+
+  .select-container {
+    border-bottom: 3px solid $color-lgray;
+    padding-bottom: 5px;
+  }
+  select {
+    color: #FFF;
+    padding: 6px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;    
+  }
+
+}

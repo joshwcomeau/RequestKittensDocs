@@ -2,9 +2,10 @@
 
 header {
   position: relative;
+  z-index: 2;
   padding: 3rem 1rem 5rem 1rem;
   background: $color-peach;
-  color: $color-dgray;
+  color: #FFF;
 
   h2 {
     margin: 0;
@@ -13,6 +14,11 @@ header {
     font-size: 7rem;
     letter-spacing: -0.05em;
     font-weight: $fw-bold;
+    text-shadow:
+      1px 1px 0px darken($color-peach, 8%),
+      2px 2px 0px darken($color-peach, 8%),
+      3px 3px 0px darken($color-peach, 8%)
+    ;
   }
 
   h5 {
@@ -20,8 +26,12 @@ header {
     padding: 0;
     text-align: center;
     font-size: 3rem;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.02em;
     font-weight: $fw-book;
+    text-shadow:
+      1px 1px 0px darken($color-peach, 5%),
+      2px 2px 0px darken($color-peach, 5%)
+    ;
   }
 
   img {
@@ -30,7 +40,7 @@ header {
     height: 100px;
     left: 0;
     right: 0;
-    bottom: -50px;
+    bottom: -40px;
     margin: auto;
   }
 }
