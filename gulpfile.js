@@ -9,6 +9,7 @@ var gulp          = require('gulp'),
     concat        = require('gulp-concat'),
     notify        = require('gulp-notify'),
     cache         = require('gulp-cache'),
+    webserver     = require('gulp-webserver'),
     sourcemaps    = require('gulp-sourcemaps');
 
 function errorLog (error) {
@@ -17,7 +18,7 @@ function errorLog (error) {
 }
 
 gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'watch');
+    gulp.start('styles', 'scripts', 'watch', 'webserver');
 });
 
 gulp.task('styles', function() {
@@ -45,6 +46,16 @@ gulp.task('scripts', function() {
     .on('error', errorLog)
     .pipe(gulp.dest('public/'))
     .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+
+gulp.task('webserver', function() {
+  gulp.src('./public')
+    .pipe(webserver({
+      livereload: false,
+      directoryListing: false,
+      open: true
+    }));
 });
 
 gulp.task('watch', ['styles', 'scripts'], function() {
