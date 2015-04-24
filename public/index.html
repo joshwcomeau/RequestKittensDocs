@@ -9,7 +9,9 @@
 <body>
   <div class="wrapper">
     <header>
-      <h2 class="title">Request Kittens</h2>            
+      <h2 class="title">Request Kittens</h2>        
+      <h5 class="tagline">The only API <em>ridiculous enough</em> to fetch cats by emotion.
+      <img class="header-icon" src="/assets/images/kitten_icon.png" />
     </header>
 
     <!-- Main content -->
@@ -21,6 +23,11 @@
         <!-- Populated by card_generator.template.html -->
         <div id="card-generator"></div>
     </div>
+
+
+    <footer>
+      Cat icon by <a href="https://thenounproject.com/Martin%20LEBRETON/">Martin Lebreton</a>
+    </footer>
   </div>
 
 
@@ -29,8 +36,9 @@
   <script src="assets/libs/underscore/underscore.js"></script>
   <script src="assets/libs/backbone/backbone.js"></script>
   <script src="assets/libs/moment/moment.js"></script>
+  <script src="assets/libs/percentext/percentext.js"></script>
 
   <!-- Concatenated app JS -->
-  <script src="app.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     "jquery": "latest",
     "underscore": "latest",
     "backbone": "latest",
-    "moment": "~2.10.2"
+    "moment": "~2.10.2",
+    "percentext": "latest"
   }
 }

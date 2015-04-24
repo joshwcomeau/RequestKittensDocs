@@ -1,0 +1,36 @@
+@import 'variables';
+
+header {
+  position: relative;
+  padding: 3rem 1rem 5rem 1rem;
+  background: $color-peach;
+  color: $color-dgray;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 7rem;
+    letter-spacing: -0.05em;
+    font-weight: $fw-bold;
+  }
+
+  h5 {
+    margin: 1rem;
+    padding: 0;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: -0.05em;
+    font-weight: $fw-book;
+  }
+
+  img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    margin: auto;
+  }
+}

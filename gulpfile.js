@@ -22,7 +22,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('public/assets/scss/*.scss')
+  return gulp.src(['public/assets/scss/normalize.scss', 'public/assets/scss/*.scss'])
     .pipe(sourcemaps.init())
       .pipe(sass())
       .on('error', errorLog)
