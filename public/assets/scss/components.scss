@@ -40,3 +40,20 @@ input[type=text], input[type=password], input[type=email] {
 
   }
 }
+
+.submit {
+  position: relative;
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 3rem;
+  background: darken($color-green, 10%);
+  color: #FFF;
+  text-shadow: 
+    1px 1px 0px darken($color-green, 20%),
+    2px 2px 0px darken($color-green, 20%)
+  ;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.5rem;
+
+}

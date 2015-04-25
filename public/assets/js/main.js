@@ -33,7 +33,7 @@ var catView = {
       this.template = _.template(data);
     }.bind(this));
 
-    this.populateEmotionsSelect();
+    this.populateEmotionsSelect("&nbsp;");
 
   },
 
@@ -73,8 +73,8 @@ var catView = {
     });
   },
 
-  populateEmotionsSelect: function() {
-    var options = "<option val=''>&nbsp;</option>";
+  populateEmotionsSelect: function(defaultText) {
+    var options = "<option val=''>"+defaultText+"</option>";
 
     this.fetchEmotions()
     .then(function(emotions) {
@@ -125,7 +125,7 @@ var catView = {
 
 
 
-catView.initialize();
+
 
 // Tie the 'update' function on the Select change
 $("#select-emotion").on("change", function() {

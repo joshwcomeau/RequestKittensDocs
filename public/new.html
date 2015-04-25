@@ -37,20 +37,30 @@
       <form action="http://www.requestkittens/cats" method="post" id="add-new-form">
         <table>
           <tr>
-            <td>API key:</td>
-            <td><input type="text" name="api_key"></td>
-          </tr>
-          <tr>
             <td>Emotion:</td>
             <td>
               <span class="select-container">
-                <select id="add-new-form-emotion">
+                <select id="select-emotion">
                   <!-- Options populated from server. -->
                 </select>
               </span>
             </td>
           </tr>
+          <tr>
+            <td>URL:</td>
+            <td><input type="text" name="url" placeholder="http://www.example.com/photo.jpg"></td>
+          </tr>
+          <tr>
+            <td>Photo credit:</td>
+            <td><input type="text" name="credit" placeholder="John Doe from website.com"></td>
+          </tr>
+          <tr>
+            <td>API key:</td>
+            <td><input type="text" name="api_key"></td>
+          </tr>
         </table>
+
+        <button class="submit">Submit Photo</button>
 
       </form>
     </section>
@@ -67,5 +77,9 @@
 
   <!-- Concatenated app JS -->
   <script src="app.js"></script>
+
+  <script>
+    catView.populateEmotionsSelect("select one");
+  </script>
 </body>
 </html>
