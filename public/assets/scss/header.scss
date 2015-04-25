@@ -43,4 +43,19 @@ header {
     bottom: -40px;
     margin: auto;
   }
+
+  // Our less-intense version for sidepages
+  &.smaller-ver {
+    padding: 1rem 1rem 2rem 1rem;
+
+    h5 {
+      margin: 0.5rem;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      bottom: -20px;
+    }
+  }
 }

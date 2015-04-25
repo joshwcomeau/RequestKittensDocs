@@ -25,36 +25,27 @@
 </head>
 <body>
   <div class="wrapper">
-    <header class="full-ver">
+    <header class="smaller-ver">
       <h2 class="title">Request Kittens</h2>        
       <h5 class="tagline">The only API ridiculous enough to fetch cats by emotion.
       <img class="header-icon" src="/assets/images/kitten_icon.png" />
     </header>
 
-    <section id="demo">
-      <h5>
-        Show me some 
-        <span class="select-container">
-          <select id="select-emotion">
-            <option value=""></option>
+    <section id="add-new">
+      <h5>Add new cat photo:</h5>
 
-            <option value="confused">confused</option>
-            <option value="happy">happy</option>
-            <option value="surprised">surprised</option>
-            <option value="sad">sad</option>
-          </select>
-        </span> 
-        kittens.
-      </h5>
+      <form action="http://www.requestkittens/cats" method="post" id="add-new-form">
+        <table>
+          <tr>
+            <td>API key:</td>
+            <td><input type="text" name="api_key"></td>
+          </tr>
+        </table>
 
-      <ul id="cat-container"></ul>
+      </form>
     </section>
 
 
-
-    <footer>
-      Cat icon by <a href="https://thenounproject.com/Martin%20LEBRETON/">Martin Lebreton</a>
-    </footer>
   </div>
 
 

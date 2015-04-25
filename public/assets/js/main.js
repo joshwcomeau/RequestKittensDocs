@@ -1,6 +1,9 @@
 // Main application logic goes here!
-$("header h2").percentext({width: 75, maxFontSize: 130});
-$("header h5").percentext({width: 78, maxFontSize: 36});
+$("header.full-ver h2").percentext({width: 75, maxFontSize: 130});
+$("header.full-ver h5").percentext({width: 78, maxFontSize: 36});
+
+$("header.smaller-ver h2").percentext({width: 50, maxFontSize: 100});
+$("header.smaller-ver h5").percentext({width: 55, maxFontSize: 30});
 
 var urls = {
   catTemplate:  '/templates/cat.template.html',
