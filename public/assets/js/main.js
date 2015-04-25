@@ -101,6 +101,8 @@ catView.initialize();
 
 // Tie the 'update' function on the Select change
 $("#select-emotion").on("change", function() {
+  $("section#demo").addClass("has-cats");
+  
   var emotion = $(this).val();
   catView.update(emotion);
 });

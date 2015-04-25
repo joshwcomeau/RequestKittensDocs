@@ -6,17 +6,17 @@ section#demo {
   padding: 5rem 1rem;
   background: $color-dgray;
   color: $color-lgray;
+  height: 250px;
+  transition: 0.5s;
 
-
-
-  h5 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 2.5rem;
-    letter-spacing: -0.02em;
-    font-weight: $fw-book;
+  &.has-cats {
+    height: 500px;
+    transition: 0.5s;
   }
+
+
+
+
 
   .select-container {
     position: relative;

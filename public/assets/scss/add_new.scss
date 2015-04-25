@@ -1,0 +1,38 @@
+@import 'variables';
+
+
+section#add-new {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 1rem;
+  background: $color-dgray;
+  color: $color-lgray;
+
+  #add-new-form {
+    margin-top: 1rem;
+  }
+
+  table {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+
+    td {
+      padding: 1rem;
+
+      &:first-of-type {
+        width: 150px;
+        text-align: right;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      .select-container {
+        width: 100%;
+      }
+    }
+  }
+
+}

@@ -32,13 +32,23 @@
     </header>
 
     <section id="add-new">
-      <h5>Add new cat photo:</h5>
+      <h3>Add new cat photo:</h3>
 
       <form action="http://www.requestkittens/cats" method="post" id="add-new-form">
         <table>
           <tr>
             <td>API key:</td>
             <td><input type="text" name="api_key"></td>
+          </tr>
+          <tr>
+            <td>Emotion:</td>
+            <td>
+              <span class="select-container">
+                <select id="add-new-form-emotion">
+                  <!-- Options populated from server. -->
+                </select>
+              </span>
+            </td>
           </tr>
         </table>
 

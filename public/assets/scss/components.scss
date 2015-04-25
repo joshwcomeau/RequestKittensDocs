@@ -1,0 +1,42 @@
+@import 'variables';
+
+h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  font-weight: $fw-book;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  padding: 0.5rem;
+  font-family: GothamRounded;
+  font-weight: $fw-light;
+  font-size: 1.5rem;
+  color: #000;
+
+  &:focus {
+    outline: 3px solid $color-peach;
+  }
+} 
+.select-container {
+  position: relative;
+  display: inline-block;
+  border-bottom: 3px solid $color-lgray;
+  
+  select {
+    width: 100%;
+    color: #FFF;
+    padding: 2px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;    
+
+  }
+}
