@@ -81,12 +81,11 @@ var catView = {
 
       // We have our cat data. Now we need to iterate through them creating templates with them.
       domCats = this.cats.map(function(cat) {
-        console.log(this.template);
         return this.template(cat);
       }.bind(this));
 
       // Let's concatenate all those templates, and shove 'em in the DOM!
-      $("#cat-container").html(domCats.join());
+      $("#cat-container").html(domCats.join(""));
     }.bind(this));
   }
 
@@ -96,3 +95,9 @@ var catView = {
 
 
 catView.initialize();
+
+// Tie the 'update' function on the Select change
+$("#select-emotion").on("change", function() {
+  var emotion = $(this).val();
+  catView.update(emotion);
+});

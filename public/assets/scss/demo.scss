@@ -19,12 +19,14 @@ section#demo {
   }
 
   .select-container {
+    position: relative;
+    display: inline-block;
     border-bottom: 3px solid $color-lgray;
-    padding-bottom: 5px;
   }
   select {
+    width: 100%;
     color: #FFF;
-    padding: 6px;
+    padding: 2px;
     outline: none;
     border: none;
     box-shadow: none;
