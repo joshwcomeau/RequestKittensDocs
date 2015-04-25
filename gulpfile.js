@@ -31,12 +31,17 @@ gulp.task('styles', function() {
       .pipe(concat('style.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('public/'))
-    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['public/assets/js/init.js', 'public/assets/js/**/*.model.js', 'public/assets/js/**/*.collection.js', 'public/assets/js/**/*.view.js', 'public/assets/js/**/*.js'])
+  return gulp.src([
+    'public/assets/js/init.js', 
+    'public/assets/js/**/application.controller.js', 
+    'public/assets/js/**/*.controller.js', 
+    'public/assets/js/**/*.js', 
+    'public/assets/js/main.js'
+  ])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(sourcemaps.init())
@@ -45,7 +50,6 @@ gulp.task('scripts', function() {
     .pipe(sourcemaps.write('./'))
     .on('error', errorLog)
     .pipe(gulp.dest('public/'))
-    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 
