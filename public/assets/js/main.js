@@ -5,9 +5,12 @@ $("header.full-ver h5").percentext({width: 78, maxFontSize: 36});
 $("header.smaller-ver h2").percentext({width: 50, maxFontSize: 100});
 $("header.smaller-ver h5").percentext({width: 55, maxFontSize: 30});
 
+var BASE_URL = 'http://requestkittens.com'
+
 var urls = {
-  catTemplate:  '/templates/cat.template.html',
-  catApi:       'http://localhost:3000/cats'
+  catTemplate:      '/templates/cat.template.html',
+  ApiCatIndex:      BASE_URL+'/cats',
+  ApiEmotionIndex:  BASE_URL+'/emotions'
 };
 
 var API_KEY =   '7d791ff16add503b2542c23afb3aeab0';
@@ -30,6 +33,8 @@ var catView = {
       this.template = _.template(data);
     }.bind(this));
 
+    this.populateEmotionsSelect();
+
   },
 
   generateCat: function(attrs) {
@@ -46,7 +51,7 @@ var catView = {
   },
 
   fetchCats: function(emotion) {
-    return $.ajax(urls.catApi, {
+    return $.ajax(urls.ApiCatIndex, {
       method: 'GET',
       data: {
         emotion: emotion
@@ -56,6 +61,29 @@ var catView = {
         'Authorization': API_KEY
       }
     });
+  },
+
+  fetchEmotions: function() {
+    return $.ajax(urls.ApiEmotionIndex, {
+      method: 'GET',
+      contentType: "application/json",
+      headers: {
+        'Authorization': API_KEY
+      }
+    });
+  },
+
+  populateEmotionsSelect: function() {
+    var options = "<option val=''>&nbsp;</option>";
+
+    this.fetchEmotions()
+    .then(function(emotions) {
+      options += emotions._items.map(function(emo) {
+        return "<option val='"+ emo.name +"'>"+ emo.name +"</option>";
+      });
+
+      $("#select-emotion").html(options);
+    })
   },
 
 
