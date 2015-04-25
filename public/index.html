@@ -24,6 +24,10 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+  <div id="flash-message">
+    <div class="close"><img src="/assets/images/close_icon.png"></div>
+    <h4></h4>
+  </div>
   <div class="wrapper">
     <header class="full-ver">
       <h2 class="title">Request Kittens</h2>        
@@ -63,7 +67,7 @@
   <script src="app.js"></script>
 
   <script>
-    catView.initialize();
+  window.reqKitControllers.catIndex.initialize();
   </script>
 </body>
 </html>

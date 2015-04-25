@@ -24,6 +24,7 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+  
   <div class="wrapper">
     <header class="smaller-ver">
       <h2 class="title">Request Kittens</h2>        
@@ -40,7 +41,7 @@
             <td>Emotion:</td>
             <td>
               <span class="select-container">
-                <select id="select-emotion">
+                <select id="field-emotion" required>
                   <!-- Options populated from server. -->
                 </select>
               </span>
@@ -48,15 +49,15 @@
           </tr>
           <tr>
             <td>URL:</td>
-            <td><input type="text" name="url" placeholder="http://www.example.com/photo.jpg"></td>
+            <td><input type="text" name="url" id="field-url" placeholder="http://www.example.com/photo.jpg" required></td>
           </tr>
           <tr>
             <td>Photo credit:</td>
-            <td><input type="text" name="credit" placeholder="John Doe from website.com"></td>
+            <td><input type="text" name="credit" id="field-credit" placeholder="John Doe from website.com" required></td>
           </tr>
           <tr>
             <td>API key:</td>
-            <td><input type="text" name="api_key"></td>
+            <td><input type="text" name="api_key" id="field-api-key" required></td>
           </tr>
         </table>
 
@@ -79,7 +80,11 @@
   <script src="app.js"></script>
 
   <script>
-    catView.populateEmotionsSelect("select one");
+    window.reqKitControllers.catNew.initialize();
+    $("#add-new-form").on("submit", function(e) {
+      e.preventDefault();
+      window.reqKitControllers.catNew.handleSubmit();
+    });
   </script>
 </body>
 </html>
