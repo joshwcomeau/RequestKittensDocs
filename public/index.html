@@ -26,16 +26,14 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div id="flash-message">
-    <div class="close"><img src="/assets/images/close_icon.png"></div>
-    <h4></h4>
-  </div>
   <div class="wrapper">
     <header class="full-ver">
       <h2 class="title">Request Kittens</h2>        
       <h5 class="tagline">The only API ridiculous enough to fetch cats by emotion.
       <img class="header-icon" src="/assets/images/kitten_icon.png" />
     </header>
+
+    <div class="header-fill"></div>
 
     <section id="demo">
       <h3>
@@ -51,12 +49,12 @@
       <ul id="cat-container"></ul>
     </section>
 
-    <section id="quickstart">
+    <section id="quickstart-api-key">
       <div class="width-wrap">
         <h2>Quickstart</h2>
         <p>
           First thing's first, you need an API key! <br>
-          Enter your email and we'll send you one lickety-split.
+          Enter your email and we'll generate one lickety-split.
         </p>
         <form action="http://requestkittens.com/users" method="post" id="request-api-key-form">
           <input type="email" id="request-api-key-email" placeholder="you@place.com" required><button id="request-api-key-submit" ><i class="fa fa-chevron-right" id="request-api-key-icon"></i></button>  
@@ -67,6 +65,20 @@
           <span class="api-key">hd7ayh9ahdsahad9HDDh9dsah9dha</span>
         </div>
         
+      </div>
+    </section>
+
+    <section id="quickstart-getting-started">
+      <div class="width-wrap">
+        <h4>Making Requests</h4>
+        <p>Now that you've got your pristine API key handy, you've just got to attach it as an Authorization header with every request you make. Here's a jQuery example:
+        <script src="https://gist.github.com/joshwcomeau/227a0d09be99b00cb684.js"></script>
+        <p class="explanation"><strong>CORS enabled.</strong> Good news! This API is set up to handle cross-domain AJAX requests with CORS. Most libraries like jQuery will use CORS by default, but if you're making XHR requests yourself, <a href="http://www.html5rocks.com/en/tutorials/cors/">this guide might help</a>.
+
+        <h4 class="padded-top">Rate Limits</h4>
+        <p>
+          API keys are limited to 1000 requests a day; this is to prevent abuse. <br>Contact me if you simply <em>must have</em> more kittens.
+        </p>
       </div>
     </section>
 
@@ -88,12 +100,27 @@
   <script src="app.js"></script>
 
   <script>
+    window.reqKitControllers.application.fetchFlashMessageTemplate();
+
     window.reqKitControllers.catIndex.initialize();
     window.reqKitControllers.userNew.initialize();
 
     $("#request-api-key-form").on("submit", function(e) {
       e.preventDefault();
       window.reqKitControllers.userNew.handleSubmit();
+    });
+
+    // "float" the top logo and orange bar when you scroll below a certain point.
+    $(window).on("scroll", function() {
+      var scrollTop = $(window).scrollTop();
+
+      if ( scrollTop >= 300 ) {
+        $("header").addClass("float");
+        $(".header-fill").show();
+      } else {
+        $("header").removeClass("float");
+        $(".header-fill").hide();
+      }
     });
 
 

@@ -1,6 +1,6 @@
 @import 'variables';
 
-section#quickstart {
+section#quickstart-api-key {
   position: relative;
   z-index: 1;
   min-height: 417px;
@@ -9,7 +9,7 @@ section#quickstart {
   color: #FFF;
   transition: 0.5s;
 
-  h2 {
+  h2, h4 {
     text-shadow: 
       1px 1px 0px darken($color-teal, 10%),
       2px 2px 0px darken($color-teal, 10%)
@@ -82,6 +82,40 @@ section#quickstart {
       border-bottom: 5px solid lighten($color-green, 5%);
       padding-bottom: 4px;
     }
+  }
+
+}
+
+section#quickstart-getting-started {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1rem;
+  background: darken($color-teal,13%);
+  color: #FFF;
+  transition: 0.5s;
+
+  h2, h4 {
+    text-shadow: 
+      1px 1px 0px darken($color-teal, 23%),
+      2px 2px 0px darken($color-teal, 23%)
+    ;
+  }
+
+  .padded-top {
+    padding-top: 1.5rem;
+  }
+
+  a {
+    color: $color-peach;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($color-peach, 10%);
+    }
+  }
+
+  p {
+    text-shadow: 1px 1px 0px darken($color-teal, 20%);
   }
 
 }

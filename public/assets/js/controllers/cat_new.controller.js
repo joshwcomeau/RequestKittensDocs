@@ -10,7 +10,6 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
 
   initialize: function() {
     this.populateEmotionsSelect(this.fieldEmotion, "select one", true);
-    this.fetchFlashMessageTemplate();
   },
 
   postCatData: function(data, headers) {

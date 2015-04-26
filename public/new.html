@@ -81,6 +81,8 @@
   <script src="app.js"></script>
 
   <script>
+    window.reqKitControllers.application.fetchFlashMessageTemplate();
+
     window.reqKitControllers.catNew.initialize();
 
     $("#add-new-form").on("submit", function(e) {

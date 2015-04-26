@@ -20,7 +20,6 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
     }.bind(this));
 
     this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true);
-
   },
 
   generateCat: function(attrs) {
@@ -38,11 +37,9 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
 
   fetchCats: function(emotion) {
     return $.ajax(window.reqKitConstants.ApiCatIndex, {
-      method: 'GET',
       data: {
         emotion: emotion
       },
-      contentType: "application/json",
       headers: {
         'Authorization': window.reqKitConstants.ApiKey
       }

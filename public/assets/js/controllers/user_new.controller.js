@@ -9,6 +9,9 @@ window.reqKitControllers.userNew = _.extend({}, window.reqKitControllers.applica
 
   apiKey:           null,
 
+  initialize: function() {
+
+  },
 
   requestKey: function(data) {
     return $.ajax(window.reqKitConstants.ApiUserCreate, {
@@ -27,7 +30,7 @@ window.reqKitControllers.userNew = _.extend({}, window.reqKitControllers.applica
       $(this.fieldEmail).val("");
       $(this.fieldSubmit).addClass("error");
       $(this.fieldSubmitIcon).removeClass("fa-cog fa-spin").addClass("fa-times");
-      window.setTimeout(function() { this.updateState("default"); }.bind(this), 1000);
+      window.setTimeout(function() { this.updateState("default"); }.bind(this), 3000);
     } else if ( state === "completed" ) {
       $(this.fieldSubmit).addClass("completed");
       $(this.fieldSubmitIcon).removeClass("fa-cog fa-spin").addClass("fa-check");
@@ -40,6 +43,7 @@ window.reqKitControllers.userNew = _.extend({}, window.reqKitControllers.applica
         $(this.apiKeyContainer).fadeIn(500);
       }.bind(this), 1500);
     } else if ( state === "default" ) {
+      $(this.fieldEmail).removeClass("shrunken");
       $(this.fieldSubmit).removeAttr("class");
       $(this.fieldSubmitIcon).attr("class", "fa fa-chevron-right");
     }

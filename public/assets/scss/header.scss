@@ -1,11 +1,24 @@
 @import 'variables';
 
+.header-fill {
+  display: none;
+  position: relative;
+  height: 360px;
+}
 header {
   position: relative;
   z-index: 2;
   padding: 3rem 1rem 5rem 1rem;
   background: $color-peach;
   color: #FFF;
+  height: 360px;
+
+  &.float {
+    position: fixed;
+    top: -300px;
+    left: 0;
+    right: 0;
+  }
 
   h2 {
     margin: 0;

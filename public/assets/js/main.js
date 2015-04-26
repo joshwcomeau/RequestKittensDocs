@@ -12,3 +12,4 @@ $("#select-emotion").on("change", function() {
   var emotion = $(this).val();
   window.reqKitControllers.catIndex.update(emotion);
 });
+
