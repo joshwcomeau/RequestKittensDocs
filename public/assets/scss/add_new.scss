@@ -35,4 +35,14 @@ section#add-new {
     }
   }
 
+  .submit {
+    &.in-progress {
+      background: $color-sand;
+      text-shadow: 
+        1px 1px 0px darken($color-sand, 20%),
+        2px 2px 0px darken($color-sand, 20%)
+      ;
+    }
+  }
+
 }

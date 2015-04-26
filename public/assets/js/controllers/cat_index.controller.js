@@ -21,8 +21,6 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
 
     this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true);
 
-    this.fetchFlashMessageTemplate();
-
   },
 
   generateCat: function(attrs) {

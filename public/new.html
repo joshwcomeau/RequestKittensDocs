@@ -25,6 +25,7 @@
 </head>
 <body>
   
+  <div class="black-overlay"></div>
   <div class="wrapper">
     <header class="smaller-ver">
       <h2 class="title">Request Kittens</h2>        
@@ -81,6 +82,7 @@
 
   <script>
     window.reqKitControllers.catNew.initialize();
+
     $("#add-new-form").on("submit", function(e) {
       e.preventDefault();
       window.reqKitControllers.catNew.handleSubmit();

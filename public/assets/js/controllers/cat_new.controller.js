@@ -9,7 +9,6 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
   savedCats: [],
 
   initialize: function() {
-    console.log("initializing");
     this.populateEmotionsSelect(this.fieldEmotion, "select one", true);
     this.fetchFlashMessageTemplate();
   },
@@ -26,12 +25,6 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
   },
 
   handleSubmit: function() {
-    if ( !$(this.fieldEmotion + " option:selected").attr("value")) {
-      console.log("Select a feeliung")
-      this.updateFlashMessage("Please select an emotion", "alert");
-      return false;
-    }
-
     var data = {
       url:      $(this.fieldUrl).val(),
       emotion:  $(this.fieldEmotion).val(),
@@ -42,11 +35,28 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
       'Authorization': $(this.fieldApiKey).val()
     };
 
+    // We need to do something to ensure the user knows the request is in progress.
+    // For now, we're showing a black overlay and updating the submit button.
+    $(".black-overlay").fadeIn(200);
+    $(".submit").addClass("in-progress").text("Submitting...");
+
+
+
+    if ( !$(this.fieldEmotion + " option:selected").attr("value")) {
+      this.updateFlashMessage("Please select an emotion", "alert");
+      return false;
+    }
+
     this.postCatData(data, headers)
     .then(function(results) {
       this.savedCats.push(results);
 
+      // Remove visual cues
+      $(".black-overlay").fadeOut(200);
+      $(".submit").removeClass("in-progress").text("Submit Photo");
+
       // Clear form fields
+      $("#field-url, #field-credit, #field-emotion").val("");
 
       // Display success message
       this.updateFlashMessage("Successfully saved cat!", "success");

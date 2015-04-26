@@ -22,6 +22,8 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="flash-message">
@@ -49,6 +51,25 @@
       <ul id="cat-container"></ul>
     </section>
 
+    <section id="quickstart">
+      <div class="width-wrap">
+        <h2>Quickstart</h2>
+        <p>
+          First thing's first, you need an API key! <br>
+          Enter your email and we'll send you one lickety-split.
+        </p>
+        <form action="http://requestkittens.com/users" method="post" id="request-api-key-form">
+          <input type="email" id="request-api-key-email" placeholder="you@place.com" required><button id="request-api-key-submit" ><i class="fa fa-chevron-right" id="request-api-key-icon"></i></button>  
+        </form>
+
+        <div class="api-key-container">
+          <span class="api-key-label">Your API key is</span>
+          <span class="api-key">hd7ayh9ahdsahad9HDDh9dsah9dha</span>
+        </div>
+        
+      </div>
+    </section>
+
 
 
     <footer>
@@ -67,7 +88,15 @@
   <script src="app.js"></script>
 
   <script>
-  window.reqKitControllers.catIndex.initialize();
+    window.reqKitControllers.catIndex.initialize();
+    window.reqKitControllers.userNew.initialize();
+
+    $("#request-api-key-form").on("submit", function(e) {
+      e.preventDefault();
+      window.reqKitControllers.userNew.handleSubmit();
+    });
+
+
   </script>
 </body>
 </html>

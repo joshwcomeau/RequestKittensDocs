@@ -34,7 +34,6 @@ window.reqKitControllers.application = {
   },
 
   updateFlashMessage: function(msg, type) {
-    console.log("updating flash", msg, type)
     // The idea with flash messages is they always exist, they're just hidden off-screen normally.
     // We update the message, show it, wait a few seconds, and hide it.
 
@@ -46,6 +45,7 @@ window.reqKitControllers.application = {
 
     // auto-hide it after a few seconds
     window.setTimeout(function() {
+      console.log($(this.flashMessageContainer));
       $(this.flashMessageContainer).removeClass("visible");
     }.bind(this), 5000);
   },

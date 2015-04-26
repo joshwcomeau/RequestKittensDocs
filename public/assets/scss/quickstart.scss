@@ -1,0 +1,87 @@
+@import 'variables';
+
+section#quickstart {
+  position: relative;
+  z-index: 1;
+  min-height: 417px;
+  padding: 5rem 1rem;
+  background: $color-teal;
+  color: #FFF;
+  transition: 0.5s;
+
+  h2 {
+    text-shadow: 
+      1px 1px 0px darken($color-teal, 10%),
+      2px 2px 0px darken($color-teal, 10%)
+    ;
+  }
+
+  p {
+    text-shadow: 1px 1px 0px darken($color-teal, 8%);
+  }
+
+  input {
+    border: 0;
+    border-radius: 4px 0 0 4px;
+    padding: 0 1rem;
+    height: 50px;
+    line-height: 50px;
+    width: 300px;
+    transition: 0.25s;
+
+    &:focus {
+      width: 330px;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    &.shrunken {
+      transition: 0.6s;
+      width: 0 !important;
+      padding: 0 5px;
+    }
+  }
+
+  button {
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    background: $color-dgray;
+    padding: 0 2.2rem;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+    font-size: 1.25rem;
+    outline: none;
+
+    &.sending {
+      font-size: 1.5rem;
+      background: $color-sand;
+    }
+
+    &.completed {
+      transition: 0.5s;
+      background: $color-green;
+    }
+
+    &.error {
+      background: $color-red;
+    }
+  }
+
+  .api-key-container {
+    display: none;
+    color: $color-dgray;
+
+    .api-key-label {
+      display: block;
+      font-size: 1rem;
+      padding: 1rem 0 0 1rem;
+    }
+    .api-key {
+      font-size: 2.2rem;
+      border-bottom: 5px solid lighten($color-green, 5%);
+      padding-bottom: 4px;
+    }
+  }
+
+}
