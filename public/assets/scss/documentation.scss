@@ -1,0 +1,132 @@
+@import 'variables';
+
+section#documentation {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1rem;
+  background: $color-dgray;
+  color: $color-lgray;
+  transition: 0.5s;
+
+  h2 {
+    color: #FFF;
+    text-shadow: 
+      1px 1px 0px darken($color-dgray, 7%),
+      2px 2px 0px darken($color-dgray, 7%)
+    ;
+  }
+
+  h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 5px;
+    text-shadow: 
+      1px 1px 0px darken($color-dgray, 7%)
+    ;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    font-weight: $fw-book;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: lighten($color-teal, 6%);
+    text-decoration: none;
+    transition: 1s;
+
+    &:hover {
+      color: lighten($color-teal, 16%);
+      transition: 0.4s;
+    }
+  }
+
+  .endpoints {
+    padding: 3rem 0.5rem;
+  }
+
+  .method {
+    padding: 0.5rem;
+    font-size: 0.5em;
+    border-radius: 5px;
+    vertical-align: middle;
+    color: #FFF;
+    font-weight: $fw-bold;
+
+    &.get {
+      color: #FFF;
+      text-shadow: 1px 1px 0px darken($color-green, 15%);
+      background: $color-green;
+    }
+
+    &.post {
+      background: $color-sand;
+    }
+  }
+
+  .param-table {
+    width: 100%;
+    margin-top: 2rem;
+
+    tr {
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 1.1em;
+      text-align: left;
+      padding: 1rem;
+      background: rgba(255,255,255,0.1);
+    }
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    td:first-of-type {
+      font-weight: $fw-bold;
+      color: lighten($color-sand, 20%);
+    }
+
+    td:last-of-type {
+      font-size: 0.85em;
+    }
+  }
+
+  .image-size-note {
+    margin-bottom: 10px;
+  }
+
+  .image-size-label {
+    color: lighten($color-peach, 10%);
+    display: block;
+  }
+
+  .auth-required {
+    margin-top: 0;
+    font-size: 1.05rem;
+
+    strong { color: lighten($color-red, 6%); }
+  }
+
+  .request-key {
+    color: lighten($color-sand, 14%);
+  }
+
+  .request-value {
+    color: lighten($color-green, 14%);
+  }
+
+  .smaller {
+    font-size: 0.88em;
+  }
+
+
+
+}

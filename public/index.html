@@ -73,7 +73,7 @@
         <h4>Making Requests</h4>
         <p>Now that you've got your pristine API key handy, you've just got to attach it as an Authorization header with every request you make. Here's a jQuery example:
         <script src="https://gist.github.com/joshwcomeau/227a0d09be99b00cb684.js"></script>
-        <p class="explanation"><strong>CORS enabled.</strong> Good news! This API is set up to handle cross-domain AJAX requests with CORS. Most libraries like jQuery will use CORS by default, but if you're making XHR requests yourself, <a href="http://www.html5rocks.com/en/tutorials/cors/">this guide might help</a>.
+        <p class="explanation"><strong>CORS enabled.</strong> Good news! This API is set up to handle cross-domain AJAX requests with CORS. No need to fuss with JSONP or route requests through a server.
 
         <h4 class="padded-top">Rate Limits</h4>
         <p>
@@ -82,6 +82,118 @@
       </div>
     </section>
 
+    <section id="documentation">
+      <div class="width-wrap">
+        <h2>The Documentation</h2>
+
+        <h4>Endpoints</h4>
+
+        <div class="endpoints">
+
+          <div class="endpoint">
+            <h5><span class="method get">GET</span> http://requestkittens.com/cats</h5>
+            <p>
+              A randomized set of category-specific cat images. The meat of the API.
+            </p>
+            <p class="auth-required">
+              <strong>Authorization required.</strong> Pass your API key as the 'Authorization' header.
+            </p>
+
+            <table class="param-table">
+              <tr>
+                <th>Parameter</th>
+                <th>Accepted Values</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+              <tr>
+                <td>emotion</td>
+                <td>One of the 7 cat emotions. <a href="">See below.</a></td>
+                <td><em>null</em></td>
+                <td>Leaving it blank will pull a random assortment of cat emotions.</td>
+              </tr>
+              <tr>
+                <td>numOfResults</td>
+                <td>Integer from 1 to 100</td>
+                <td>20</td>
+                <td>Results will always be an array, even if numOfResults is set to 1.</td>
+              </tr>
+              <tr>
+                <td>imageSize</td>
+                <td>thumb, small, medium, full</td>
+                <td>small</td>
+                <td>
+                  <div class="image-size-note"><strong class="image-size-label">thumb</strong> A 200x200 square thumbnail.</div>
+                  <div class="image-size-note"><strong class="image-size-label">small</strong> Width set to 480px with preserved aspect ratio.</div>
+                  <div class="image-size-note"><strong class="image-size-label">medium</strong> Width set to 960px with preserved aspect ratio.</div>
+                  <div class="image-size-note"><strong class="image-size-label">full</strong> Original image size, max 3000px width.</div>
+                </td>
+              </tr>
+            </table>
+
+            <h4>Sample Request</h4>
+            <p>http://requestkittens.com/cats?<span class="request-key">emotion</span>=<span class="request-value">happy</span>&amp;<span class="request-key">numOfResults</span>=<span class="request-value">2</span>&amp;<span class="request-key">imageSize</span>=<span class="request-value">full</span>
+
+            <h4>Sample Response</h4>
+            <script src="https://gist.github.com/joshwcomeau/725acfe5c910b1e534b1.js"></script>
+            <p class="smaller"><strong>Notes:</strong> Because some kittens have a wealth of emotional data on their faces, emotions are an array of 1 or more value.</p>
+          </div>
+      
+
+          <div class="hr"></div>
+
+          <div class="endpoint">
+              <h5><span class="method get">GET</span> http://requestkittens.com/emotions</h5>
+              <p>
+                Fetch the full set of cat emotions. At the time of writing, the full list is:
+              </p>
+              <p class="auth-required">
+                <strong>Authorization required.</strong> Pass your API key as the 'Authorization' header.
+              </p>
+
+              <table class="param-table">
+                <tr>
+                  <th>Parameter</th>
+                  <th>Accepted Values</th>
+                  <th>Default</th>
+                  <th>Notes</th>
+                </tr>
+                <tr>
+                  <td>emotion</td>
+                  <td>One of the 7 cat emotions. <a href="">See below.</a></td>
+                  <td><em>null</em></td>
+                  <td>Leaving it blank will pull a random assortment of cat emotions.</td>
+                </tr>
+                <tr>
+                  <td>numOfResults</td>
+                  <td>Integer from 1 to 100</td>
+                  <td>20</td>
+                  <td>Results will always be an array, even if numOfResults is set to 1.</td>
+                </tr>
+                <tr>
+                  <td>imageSize</td>
+                  <td>thumb, small, medium, full</td>
+                  <td>small</td>
+                  <td>
+                    <div class="image-size-note"><strong class="image-size-label">thumb</strong> A 200x200 square thumbnail.</div>
+                    <div class="image-size-note"><strong class="image-size-label">small</strong> Width set to 480px with preserved aspect ratio.</div>
+                    <div class="image-size-note"><strong class="image-size-label">medium</strong> Width set to 960px with preserved aspect ratio.</div>
+                    <div class="image-size-note"><strong class="image-size-label">full</strong> Original image size, max 3000px width.</div>
+                  </td>
+                </tr>
+              </table>
+
+              <h4>Sample Request</h4>
+              <p>http://requestkittens.com/cats?<span class="request-key">emotion</span>=<span class="request-value">happy</span>&amp;<span class="request-key">numOfResults</span>=<span class="request-value">2</span>&amp;<span class="request-key">imageSize</span>=<span class="request-value">full</span>
+
+              <h4>Sample Response</h4>
+              <script src="https://gist.github.com/joshwcomeau/725acfe5c910b1e534b1.js"></script>
+              <p class="smaller"><strong>Notes:</strong> Because some kittens have a wealth of emotional data on their faces, emotions are an array of 1 or more value.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <footer>
