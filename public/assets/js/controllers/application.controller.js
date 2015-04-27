@@ -24,10 +24,23 @@ window.reqKitControllers.application = {
       });
 
       $(destination).html(options);
+
+      return emotions;
     });
   },
 
+  populateEmotionsList: function(emos, destination) {
+    var emoLis = "";
+
+    emoLis += emos._items.map(function(emo) {
+      return "<li>"+ emo.name +"</li>";
+    });
+
+    return $(destination).html(emoLis);
+  },
+
   fetchFlashMessageTemplate: function() {
+
     return $.get( window.reqKitConstants.fmTemplate, function(template) {
       $("body").prepend(_.template(template)());
     }.bind(this), 'html');
