@@ -17,7 +17,7 @@ window.reqKitControllers.application = {
   populateEmotionsSelect: function(destination, defaultText, showBlankOption) {
     var options = showBlankOption ? "<option>"+defaultText+"</option>" : "";
 
-    this.fetchEmotions()
+    return this.fetchEmotions()
     .then(function(emotions) {
       options += emotions._items.map(function(emo) {
         return "<option value='"+ emo.name +"'>"+ emo.name +"</option>";

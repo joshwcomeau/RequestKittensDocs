@@ -19,7 +19,10 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
       this.template = _.template(data);
     }.bind(this));
 
-    this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true);
+    this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true)
+    .then(function() {
+      $("#demo h3").fadeIn(500);
+    });
   },
 
   generateCat: function(attrs) {
