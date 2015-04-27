@@ -34,7 +34,7 @@ window.reqKitControllers.application = {
 
     emoLis += emos._items.map(function(emo) {
       return "<li>"+ emo.name +"</li>";
-    });
+    }).join("");
 
     return $(destination).html(emoLis);
   },

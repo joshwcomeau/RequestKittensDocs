@@ -21,11 +21,9 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
 
     this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true)
     .then(function(emos) {
-      console.log("populating ul with", emos);
       return this.populateEmotionsList(emos, ".list-of-emotions");
     }.bind(this))
     .then(function() {
-      console.log("Fading in h3");
       $("#demo h3").fadeIn(500);
     });
   },

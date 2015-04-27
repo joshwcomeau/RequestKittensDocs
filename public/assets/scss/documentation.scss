@@ -76,6 +76,12 @@ section#documentation {
 
     tr {
       vertical-align: top;
+
+      &:last-of-type {
+        td {
+          border-bottom: none;
+        }
+      }
     }
 
     th {
@@ -125,6 +131,20 @@ section#documentation {
 
   .smaller {
     font-size: 0.88em;
+  }
+
+  .list-of-emotions {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      color: #FFF;
+      background: #555;
+      border-radius: 3px;
+      margin-right: 6px;
+    }
   }
 
 
