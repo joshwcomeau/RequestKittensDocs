@@ -111,7 +111,7 @@
               </tr>
               <tr>
                 <td>emotion</td>
-                <td>One of the 7 cat emotions. <a href="">See below.</a></td>
+                <td>One of the 7 cat emotions. <a href="#endpoint-emotion-index">See below.</a></td>
                 <td><em>null</em></td>
                 <td>Leaving it blank will pull a random assortment of cat emotions.</td>
               </tr>
@@ -147,6 +147,7 @@
           <div class="hr"></div>
 
           <div class="endpoint">
+
             <h5><span class="method get">GET</span> http://requestkittens.com/cats/:id</h5>
             <p>
               Fetch information about a specific cat. Returns all available image sizes.
@@ -162,12 +163,13 @@
             <script src="https://gist.github.com/joshwcomeau/b04b37bd37b141c28910.js"></script>
           </div>
         
-        
-      
 
+      
+          <a name="endpoint-emotion-index"></a>
           <div class="hr"></div>
 
           <div class="endpoint">
+            
             <h5><span class="method get">GET</span> http://requestkittens.com/emotions</h5>
             <p>
               Returns the full set of cat emotions. No optional params or settings, it just fetches the index. Current emotions are:
@@ -182,6 +184,20 @@
             <h4>Sample Response</h4>
             <script src="https://gist.github.com/joshwcomeau/8576ba2c15876554afe3.js"></script>
           </div>
+
+
+          <div class="hr"></div>
+
+          <div class="endpoint">
+            
+            <h5><span class="method post">POST</span> http://requestkittens.com/cats</h5>
+            <p>
+              Add a new kitten to the database! Note that <strong>only creators may use this endpoint.</strong> Want to contribute? Contact me and I'll gladly upgrade your API key to be able to add kittens.
+
+            </p>
+          </div>
+
+
 
 
           
