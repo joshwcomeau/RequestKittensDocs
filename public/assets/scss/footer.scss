@@ -1,0 +1,41 @@
+@import 'variables';
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1rem;
+  background: darken($color-dgray, 11%);
+  color: #EEE;
+  text-align: center;
+
+
+  .mono {
+    font-family: monospace;
+  }
+
+  .line1 {
+    font-size: 1.4rem;
+
+    strong {
+      color: $color-green;
+    }
+  }
+
+  .line2 {
+    font-size: 1.1rem;
+    margin-top: 6px;
+  }
+
+  .line3 {
+    font-weight: $fw-light;
+    margin-top: 2rem;
+    font-size: 1rem;
+
+    a {
+      color: #FFF;
+      font-weight: $fw-book;
+    }
+  }
+  
+
+}

@@ -1,6 +1,6 @@
 // The first JS file loaded.
 (function() {
-  var BASE_URL = 'http://requestkittens.com';
+  var BASE_URL = 'http://localhost:3000';
 
   window.reqKitConstants = {
     catTemplate:      '/templates/cat.template.html',
