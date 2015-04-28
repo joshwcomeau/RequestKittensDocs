@@ -42,7 +42,9 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
   },
 
   fetchCats: function(emotion) {
-    return $.ajax(window.reqKitConstants.ApiCatIndex, {
+    var optsString = "?numOfResults=4";
+
+    return $.ajax(window.reqKitConstants.ApiCatIndex+optsString, {
       data: {
         emotion: emotion
       },
