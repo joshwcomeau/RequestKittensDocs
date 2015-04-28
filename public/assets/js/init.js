@@ -3,8 +3,8 @@
   var BASE_URL = 'http://requestkittens.com';
 
   window.reqKitConstants = {
-    catTemplate:      '/templates/cat.template.html',
-    fmTemplate:       '/templates/flash_message.template.html',
+    catTemplate:      '/RequestKittensDocs/public/templates/cat.template.html',
+    fmTemplate:       '/RequestKittensDocs/public/templates/flash_message.template.html',
     ApiCatIndex:      BASE_URL+'/cats',
     ApiCatCreate:     BASE_URL+'/cats',
     ApiEmotionIndex:  BASE_URL+'/emotions',
