@@ -3,7 +3,7 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
   // The CSS selectors for our various form fields
   fieldUrl:     "#field-url",
   fieldEmotion: "#field-emotion",
-  fieldCredit:  "#field-credit",
+  fieldOwner:   "#field-owner",
   fieldApiKey:  "#field-api-key",
 
   savedCats: [],
@@ -27,7 +27,7 @@ window.reqKitControllers.catNew = _.extend({}, window.reqKitControllers.applicat
     var data = {
       url:      $(this.fieldUrl).val(),
       emotion:  $(this.fieldEmotion).val(),
-      credit:   $(this.fieldCredit).val()
+      owner:   $(this.fieldOwner).val()
     };
 
     var headers = {
