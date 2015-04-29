@@ -8,6 +8,7 @@ section#experiment {
   background: $color-red;
   color: #FFF;
   transition: 0.5s;
+  text-align: right;
 
   h2 {
     color: #FFF;
@@ -45,6 +46,7 @@ section#experiment {
       bottom: 50px;
       padding: 1rem;
       text-align: center;
+      font-weight: bold;
 
       .line-1 {
         font-size: 0.7rem;
@@ -52,7 +54,7 @@ section#experiment {
       }
       .line-2 {
         font-size: 1rem;
-        color: $color-teal;
+        color: darken($color-teal, 8%);
       }
 
     }
