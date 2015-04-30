@@ -110,9 +110,6 @@ input[type=text], input[type=password], input[type=email] {
   border: 5px solid #FFF;
   border-radius: 6px;
   background: #111;
-  max-width: 500px;
-  max-height: 650px;
-  overflow: hidden;
 
 
   .cat-modal-image {
@@ -133,12 +130,12 @@ input[type=text], input[type=password], input[type=email] {
     &.top {
       top: 0;
       padding-bottom: 3rem;
-      background: -moz-linear-gradient(top,  rgba(0,0,0,0.33) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.33)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top,  rgba(0,0,0,0.33) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top,  rgba(0,0,0,0.33) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-      background: -ms-linear-gradient(top,  rgba(0,0,0,0.33) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-      background: linear-gradient(to bottom,  rgba(0,0,0,0.33) 0%,rgba(0,0,0,0) 100%); /* W3C */
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
     }
 
@@ -165,9 +162,10 @@ input[type=text], input[type=password], input[type=email] {
     h4 {
       margin: 0 0 8px 0;
       padding: 0;
-      color: $color-teal;
+      color: lighten($color-teal, 12%);
       font-size: 1rem;
-      font-weight: $fw-book;
+      font-weight: $fw-bold;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 
     }
   }

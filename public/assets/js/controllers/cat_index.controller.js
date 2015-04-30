@@ -115,16 +115,18 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
     $("body").prepend(newCatModal);
 
     // Do some annoying jiggling to get the inner modal div to take up the same width as the cat image.
-    // window.setTimeout(function() {
-    //   $(".cat-modal").width( $(".cat-modal-image").width() );
-    // }, 50);
+    window.setTimeout(function() {
+      $(".cat-modal").width( $(".cat-modal-image").width() );
+      $(".cat-modal").height( $(".cat-modal-image").height() );
+      $(".modal-overlay, .cat-modal").removeClass("invisible");
+    }, 100);
     
   },
 
   closeCat: function() {
-    $(".modal-overlay, .modal").addClass("invisible");
+    $(".modal-overlay, .cat-modal").addClass("invisible");
     window.setTimeout(function() {
-      $(".modal-overlay, .modal").remove();
+      $(".modal-overlay, .cat-modal").remove();
     }, 500);
   }
 

@@ -21,6 +21,6 @@
 
   if (!developmentMode) {
     // Add our <base> tag to the top of our <head>
-    $("head").prepend('<base href="http://joshwcomeau.github.io/RequestKittensDocs/public/">')
+    $("head").prepend('<base href="http://joshwcomeau.github.io/RequestKittensDocs/public/">');
   }
 }());
