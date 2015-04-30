@@ -7,6 +7,7 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
   },
 
   cats: [],
+  cat: null,
 
   emotionSelector: "#select-emotion",
   catContainer:    "#cat-container",
@@ -14,9 +15,16 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
   initialize: function() {
     this.cats = [];
 
-    this.fetchTemplate(window.reqKitConstants.catTemplate)
+    // Pre-fetch our cat Index template (repeated 4 times when the user selects an emotion)
+    this.fetchTemplate(window.reqKitConstants.catIndexTemplate)
     .done(function(data) { 
-      this.template = _.template(data);
+      this.indexTemplate = _.template(data);
+    }.bind(this));
+
+    // Pre-fetch our cat Show template (shown in a modal when the user clicks one of the 4 cats)
+    this.fetchTemplate(window.reqKitConstants.catShowTemplate)
+    .done(function(data) { 
+      this.showTemplate = _.template(data);
     }.bind(this));
 
     this.populateEmotionsSelect(this.emotionSelector, "&nbsp;", true)
@@ -42,7 +50,7 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
   },
 
   fetchCats: function(emotion) {
-    var optsString = "?numOfResults=4";
+    var optsString = "?numOfResults=4&imageSize=all";
 
     return $.ajax(window.reqKitConstants.ApiCatIndex+optsString, {
       data: {
@@ -74,11 +82,13 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
 
     // We have our cat data. Now we need to iterate through them creating templates with them.
     domCats = this.cats.map(function(cat) {
-      return this.template(cat);
+      return this.indexTemplate(cat);
     }.bind(this));
 
     // Let's concatenate all those templates, and shove 'em in the DOM!
     $(this.catContainer).html(domCats.join(""));
+
+    console.log(this.cats);
   },
 
   /***** 
@@ -89,6 +99,33 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
     .then(function(results) {
       this.populateCatContainer(results);
     }.bind(this));
+  },
+
+  viewCat: function(id) {
+    var newCatModal;
+
+    // First, find the selected cat in our cats array
+    this.cat = _.find(this.cats, function(cat) {
+      return cat.id === id;
+    });
+
+    // Update the template with these new values
+    newCatModal = this.showTemplate(this.cat);
+
+    $("body").prepend(newCatModal);
+
+    // Do some annoying jiggling to get the inner modal div to take up the same width as the cat image.
+    // window.setTimeout(function() {
+    //   $(".cat-modal").width( $(".cat-modal-image").width() );
+    // }, 50);
+    
+  },
+
+  closeCat: function() {
+    $(".modal-overlay, .modal").addClass("invisible");
+    window.setTimeout(function() {
+      $(".modal-overlay, .modal").remove();
+    }, 500);
   }
 
 

@@ -2,12 +2,13 @@
 
 
 (function() {
-  var developmentMode = false;
+  var developmentMode = true;
 
   var BASE_URL = developmentMode ? 'http://localhost:3000' : 'http://requestkittens.com';
 
   window.reqKitConstants = {
-    catTemplate:      developmentMode ? '/templates/cat.template.html' : '/RequestKittensDocs/public/templates/cat.template.html',
+    catIndexTemplate: developmentMode ? '/templates/cat_index.template.html'     : '/RequestKittensDocs/public/templates/cat_index.template.html',
+    catShowTemplate:  developmentMode ? '/templates/cat_show.template.html'      : '/RequestKittensDocs/public/templates/cat_show.template.html',
     fmTemplate:       developmentMode ? '/templates/flash_message.template.html' : '/RequestKittensDocs/public/templates/flash_message.template.html',
     ApiCatIndex:      BASE_URL+'/cats',
     ApiCatCreate:     BASE_URL+'/cats',
