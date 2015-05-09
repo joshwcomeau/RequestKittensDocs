@@ -2,7 +2,7 @@
 
 
 (function() {
-  var developmentMode = true;
+  var developmentMode = false;
 
   var BASE_URL = developmentMode ? 'http://localhost:3000' : 'http://requestkittens.com';
 
