@@ -116,8 +116,8 @@ window.reqKitControllers.catIndex = _.extend({}, window.reqKitControllers.applic
 
     // Do some annoying jiggling to get the inner modal div to take up the same width as the cat image.
     window.setTimeout(function() {
-      $(".cat-modal").width( $(".cat-modal-image").width() );
-      $(".cat-modal").height( $(".cat-modal-image").height() );
+      // $(".cat-modal").width( $(".cat-modal-image").width() );
+      // $(".cat-modal").height( $(".cat-modal-image").height() );
       $(".modal-overlay, .cat-modal").removeClass("invisible");
     }, 100);
     
