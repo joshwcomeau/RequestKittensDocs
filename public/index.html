@@ -1,10 +1,10 @@
 <!DOCTYPE html>
- 
+
 <html lang="en">
 <head>
-   
-  
-  
+
+
+
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css" />
   <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
@@ -32,204 +32,11 @@
 <body>
   <div class="wrapper">
     <header class="full-ver">
-      <h2 class="title">Request Kittens</h2>        
+      <h2 class="title">Request Kittens</h2>
       <h5 class="tagline">The only API ridiculous enough to fetch cats by emotion.
       <img class="header-icon" src="assets/images/kitten_icon.png" />
     </header>
-
-    <div class="header-fill"></div>
-
-    <section id="demo">
-      <h3>
-        Show me some 
-        <span class="select-container">
-          <select id="select-emotion">
-            <!-- Options populated from server. -->
-          </select>
-        </span> 
-        kittens.
-      </h3>
-
-      <ul id="cat-container"></ul>
-    </section>
-
-    <section id="quickstart-api-key">
-      <div class="width-wrap">
-        <h2>Quickstart</h2>
-        <p>
-          First thing's first, you need an API key! <br>
-          Enter your email and we'll generate one lickety-split.
-        </p>
-        <form action="http://requestkittens.com/users" method="post" id="request-api-key-form">
-          <input type="email" id="request-api-key-email" placeholder="you@place.com" required><button id="request-api-key-submit" ><i class="fa fa-chevron-right" id="request-api-key-icon"></i></button>  
-        </form>
-
-        <div class="api-key-container">
-        </div>
-        
-      </div>
-    </section>
-
-    <section id="quickstart-getting-started">
-      <div class="width-wrap">
-        <h4>Making Requests</h4>
-        <p>Now that you've got your pristine API key handy, you've just got to attach it as an Authorization header with every request you make. Here's a jQuery example:
-        <script src="https://gist.github.com/joshwcomeau/227a0d09be99b00cb684.js"></script>
-        <p class="explanation"><strong>CORS enabled.</strong> Good news! This API is set up to handle cross-domain AJAX requests with CORS. No need to fuss with JSONP or route requests through a server.
-
-        <h4 class="padded-top">Rate Limits</h4>
-        <p>
-          API keys are limited to 1000 requests a day; this is to prevent abuse. <br>Contact me if you simply <em>must have</em> more kittens.
-        </p>
-
-
-
-      </div>
-    </section>
-
-    <section id="experiment">
-      <div class="width-wrap">
-        <div class="test-image" style="background-image: url('https://s3.amazonaws.com/requestkittens/553c0437e4b0bde7020ac956-bc39ce46e75d8713afc66640da61711a/full.jpg')">
-          <div class="attribution">
-            <div class="line-1">Source</div>
-            <div class="line-2">we-lovecats.tumblr.com</div>
-          </div>
-        </div>
-        <h2>This is a test.</h2>
-        <p>This API was built as a proof-of-concept. The kittens are sourced from all over the internet - for the most part, they are <strong>not</strong> in the public domain. In other words, you can't use them commercially, and need to attribute them with the supplied <em>source</em>.
-      </div>
-    </section>
-
-    <section id="documentation">
-      <div class="width-wrap">
-        <h2>The Documentation</h2>
-
-        <h4>Endpoints</h4>
-
-        <div class="endpoints">
-
-          <div class="endpoint">
-            <h5><span class="method get">GET</span> http://requestkittens.com/cats</h5>
-            <p>
-              A randomized set of category-specific cat images. The meat of the API.
-            </p>
-            <p class="auth-required">
-              <strong>Authorization required.</strong> Pass your API key as the 'Authorization' header.
-            </p>
-
-            <table class="param-table">
-              <tr>
-                <th>Parameter</th>
-                <th>Accepted Values</th>
-                <th>Default</th>
-                <th>Notes</th>
-              </tr>
-              <tr>
-                <td>emotion</td>
-                <td>One of the existing cat emotions. <a href="#endpoint-emotion-index">See below.</a></td>
-                <td><em>null</em></td>
-                <td>Leaving it blank will pull a random assortment of cat emotions.</td>
-              </tr>
-              <tr>
-                <td>numOfResults</td>
-                <td>Integer from 1 to 100</td>
-                <td>20</td>
-                <td>Results will always be an array, even if numOfResults is set to 1.</td>
-              </tr>
-              <tr>
-                <td>imageSize</td>
-                <td>thumb, normal, full, all</td>
-                <td>normal</td>
-                <td>
-                  <div class="image-size-note"><strong class="image-size-label">thumb</strong> A 200px by 200px square thumbnail.</div>
-                  <div class="image-size-note"><strong class="image-size-label">normal</strong> Width set to 500px with preserved aspect ratio.</div>
-                  <div class="image-size-note"><strong class="image-size-label">full</strong> Original image size, max 3000px width.</div>
-                  <div class="image-size-note"><strong class="image-size-label">all</strong> Include all 3 sizes as an object, where the keys are the size and the values are the URL.</div>
-                </td>
-              </tr>
-            </table>
-
-            <h4>Sample Request</h4>
-            <p>http://requestkittens.com/cats?<span class="request-key">emotion</span>=<span class="request-value">happy</span>&amp;<span class="request-key">numOfResults</span>=<span class="request-value">2</span>&amp;<span class="request-key">imageSize</span>=<span class="request-value">full</span>
-
-            <h4>Sample Response</h4>
-            <script src="https://gist.github.com/joshwcomeau/725acfe5c910b1e534b1.js"></script>
-          </div>
-
-
-
-          <div class="hr"></div>
-
-          <div class="endpoint">
-
-            <h5><span class="method get">GET</span> http://requestkittens.com/cats/:id</h5>
-            <p>
-              Fetch information about a specific cat. Returns all available image sizes.
-            </p>
-            <p class="auth-required">
-              <strong>Authorization required.</strong> Pass your API key as the 'Authorization' header.
-            </p>
-
-            <h4>Sample Request</h4>
-            <p>http://requestkittens.com/cats/<span class="request-key">553d327e594a1b5f1b13f198</span>
-
-            <h4>Sample Response</h4>
-            <script src="https://gist.github.com/joshwcomeau/b04b37bd37b141c28910.js"></script>
-          </div>
-        
-
-      
-          <a name="endpoint-emotion-index"></a>
-          <div class="hr"></div>
-
-          <div class="endpoint">
-            
-            <h5><span class="method get">GET</span> http://requestkittens.com/emotions</h5>
-            <p>
-              Returns the full set of cat emotions. No optional params or settings, it just fetches the index. Current emotions are:
-              <ul class="list-of-emotions">
-                
-              </ul>
-            </p>
-            <p class="auth-required">
-              <strong>Authorization required.</strong> Pass your API key as the 'Authorization' header.
-            </p>
-
-            <h4>Sample Response</h4>
-            <script src="https://gist.github.com/joshwcomeau/8576ba2c15876554afe3.js"></script>
-          </div>
-
-
-          <div class="hr"></div>
-
-          <div class="endpoint">
-            
-            <h5><span class="method post">POST</span> http://requestkittens.com/cats</h5>
-            <p>
-              Add a new kitten to the database! Note that <strong>only creators may use this endpoint.</strong> Want to contribute? Contact me and I'll gladly upgrade your API key to be able to add kittens.
-
-            </p>
-          </div>          
-        </div> <!-- end Endpoints -->
-
-
-
-      </div>
-    </section>
-
-
-    <footer>
-      <div class="line1"> 
-        An experimental prototype by <strong>Joshua Comeau</strong>.
-      </div>
-      <div class="line2">
-        Copyright <span class="mono">Date.now()</span>. All rights, wrongs, and grey areas reserved.
-      </div>
-      
-      <div class="line3">
-        Cat icon is modified from an original by <a href="https://thenounproject.com/Martin%20LEBRETON/">Martin Lebreton</a>
-      </div> 
-    </footer>
+    <p>Thanks for your interest — This API doesn't exist. Sorry about that!</p>
   </div>
 
 
